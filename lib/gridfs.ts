@@ -1,6 +1,6 @@
 // lib/gridfs.ts
 import { GridFSBucket } from "mongodb";
-import mongoose from "./mongodb";
+import mongoose from "mongoose";
 
 
 export function getGridFSBucket(bucketName = "applicationFiles") {

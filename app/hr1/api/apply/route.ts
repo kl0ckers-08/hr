@@ -29,7 +29,7 @@ export async function POST(req: Request) {
         uploadStream.end(buffer);
 
         return new Promise((resolve, reject) => {
-            uploadStream.on("finish", (uploadedFile) => {
+            uploadStream.on("finish", (uploadedFile: { _id: { toString: () => any; }; }) => {
                 resolve(
                     NextResponse.json({
                         message: "File uploaded",
