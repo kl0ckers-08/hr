@@ -28,7 +28,6 @@ export async function middleware(req: NextRequest) {
 
     // If user is trying to access the root/app page
     if (isAuthPage) {
-        // If they have a valid token, redirect them based on their role
         if (token) {
             try {
                 const { payload } = await jwtVerify(token, new TextEncoder().encode(JWT_SECRET)) as { payload: JWTPayload };
@@ -59,7 +58,6 @@ export async function middleware(req: NextRequest) {
                 return response;
             }
         }
-        // No token, allow access to root/app page
         return NextResponse.next();
     }
 
@@ -73,12 +71,7 @@ export async function middleware(req: NextRequest) {
         const role = payload.role;
 
         // Role-based access control
-        // Role-based access control
-        const url = req.nextUrl;
-
         switch (role) {
-
-            // HR1
             case "hr1admin":
                 if (!pathname.startsWith("/hr1/admin")) {
                     return NextResponse.redirect(new URL("/hr1/admin", req.url));
@@ -92,7 +85,6 @@ export async function middleware(req: NextRequest) {
                 }
                 break;
 
-            // HR2
             case "hr2admin":
                 if (!pathname.startsWith("/hr2/admin")) {
                     return NextResponse.redirect(new URL("/hr2/admin", req.url));
@@ -105,7 +97,6 @@ export async function middleware(req: NextRequest) {
                 }
                 break;
 
-            // HR3
             case "hr3admin":
                 if (!pathname.startsWith("/hr3/admin")) {
                     return NextResponse.redirect(new URL("/hr3/admin", req.url));
@@ -114,7 +105,7 @@ export async function middleware(req: NextRequest) {
 
             case "employee3":
                 if (!pathname.startsWith("/hr3/employee")) {
-                    return NextResponse.redirect(new URL("/app/HR3/src", req.url));
+                    return NextResponse.redirect(new URL("/hr3/employee/job-postings", req.url));
                 }
                 break;
 
@@ -122,6 +113,9 @@ export async function middleware(req: NextRequest) {
                 console.log("Unknown user role:", role);
                 return NextResponse.redirect(new URL("/", req.url));
         }
+
+        // THIS IS THE CRITICAL LINE THAT WAS MISSING!
+        return NextResponse.next();
 
     } catch (error) {
         console.error("Invalid or expired token:", error);
