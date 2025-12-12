@@ -1,0 +1,137 @@
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: var(--white);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    gap: 12px;
+}
+
+.sidebar-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.sidebar-logo {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.nav-item.active {
+    background-color: var(--bg-color);
+    /* Matches main content bg */
+    color: var(--primary-color);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-left: none;
+    margin-left: 12px;
+    padding-left: 24px;
+    /* Adjust padding due to margin */
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-snippet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.user-avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name-snippet {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-role-snippet {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    opacity: 0.9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0;
+}
+
+.logout-btn:hover {
+    opacity: 1;
+}

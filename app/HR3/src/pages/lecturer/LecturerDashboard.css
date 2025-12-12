@@ -1,0 +1,365 @@
+.lecturer-dashboard {
+    gap: 24px;
+}
+
+.lecturer-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .lecturer-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .lecturer-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lecturer-stat-card {
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lecturer-stat-card .stat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lecturer-stat-card .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.lecturer-stat-card .stat-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Charts Row */
+.charts-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .charts-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chart-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--input-border);
+}
+
+.chart-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-orange {
+    color: #f97316;
+}
+
+.text-red {
+    color: #ef4444;
+}
+
+/* Line Chart */
+.line-chart {
+    display: flex;
+    gap: 10px;
+    height: 160px;
+    margin-bottom: 16px;
+}
+
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding: 8px 0;
+}
+
+.chart-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.trend-line {
+    flex: 1;
+    width: 100%;
+}
+
+.chart-x-axis {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+.chart-legend {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Schedule Card */
+.schedule-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.upcoming-shift {
+    background: linear-gradient(135deg, var(--primary-color), #7c7ee3);
+    border-radius: var(--radius);
+    padding: 24px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.shift-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.shift-time {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.view-schedule-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.view-schedule-btn:hover {
+    opacity: 0.9;
+}
+
+/* Leave Balance Section */
+.leave-balance-section {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--input-border);
+}
+
+.section-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.leave-balance-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.leave-progress-container {
+    flex: 1;
+}
+
+.leave-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.leave-progress-bar {
+    height: 10px;
+    background-color: #e9d5ff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.leave-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.leave-count {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.request-leave-btn {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--radius);
+    font-weight: 500;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.request-leave-btn:hover {
+    opacity: 0.9;
+}
+
+/* Leave Modal */
+.leave-modal {
+    max-width: 500px;
+    width: 100%;
+}
+
+.leave-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--input-border);
+}
+
+.leave-modal .modal-title-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.leave-modal .modal-icon {
+    color: var(--primary-color);
+}
+
+.leave-modal .modal-title-group h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.leave-modal .modal-subtitle {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.leave-form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.leave-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leave-form .form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.leave-form .form-group select,
+.leave-form .form-group input,
+.leave-form .form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.leave-form .form-group select:focus,
+.leave-form .form-group input:focus,
+.leave-form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.leave-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.leave-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.leave-modal .modal-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--input-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.leave-modal .cancel-btn {
+    padding: 12px 24px;
+    background-color: white;
+    color: var(--text-muted);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.leave-modal .cancel-btn:hover {
+    background-color: #f8fafc;
+}
+
+.leave-modal .submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.leave-modal .submit-btn:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.leave-modal .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

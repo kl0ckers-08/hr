@@ -1,0 +1,72 @@
+.stats-row.four-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-mini-card.no-border {
+    border-left: none;
+    border: 1px solid var(--input-border);
+}
+
+.filters-inline {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.search-bar.flex-grow {
+    flex: 1;
+}
+
+.employee-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.emp-name {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.emp-email {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
+.status-badge.pending {
+    background-color: #fff7ed;
+    color: #ea580c;
+}
+
+.status-badge.approved {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.status-badge.rejected {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.action-icon.approve {
+    color: #22c55e;
+    background-color: transparent;
+}
+
+.action-icon.approve:hover {
+    background-color: #dcfce7;
+}
+
+.action-icon.reject {
+    color: #ef4444;
+    background-color: transparent;
+}
+
+.action-icon.reject:hover {
+    background-color: #fee2e2;
+}
+
+.action-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

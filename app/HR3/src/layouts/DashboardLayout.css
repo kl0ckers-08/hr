@@ -1,0 +1,49 @@
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--bg-color);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.content-area {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Tablet and below - Collapsible Sidebar */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+/* Mobile - Full width content, hidden sidebar */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+
+    .content-area {
+        padding: 1rem;
+        padding-top: 70px;
+        /* Space for mobile menu toggle */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .content-area {
+        padding: 0.75rem;
+        padding-top: 70px;
+    }
+}

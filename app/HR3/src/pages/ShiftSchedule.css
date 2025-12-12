@@ -1,0 +1,408 @@
+.view-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .view-controls {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .view-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.view-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+@media (max-width: 640px) {
+    .view-tabs {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .view-tab {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+.view-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    background-color: var(--white);
+    color: var(--text-muted);
+    border: 1px solid var(--input-border);
+}
+
+.view-tab:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.view-tab.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.search-bar.compact {
+    width: 280px;
+}
+
+@media (max-width: 640px) {
+    .search-bar.compact {
+        width: 100%;
+    }
+}
+
+/* Calendar Styles - Redesigned for clarity */
+.calendar-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 70px repeat(6, 1fr);
+    min-height: 600px;
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        min-width: 800px;
+        /* Force horizontal scroll on mobile */
+        min-height: 500px;
+    }
+}
+
+.time-column {
+    border-right: 1px solid var(--input-border);
+    background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+}
+
+.day-column {
+    border-right: 1px solid var(--input-border);
+    position: relative;
+    min-width: 120px;
+}
+
+.day-column:last-child {
+    border-right: none;
+}
+
+.header-cell {
+    padding: 14px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    border-bottom: 2px solid var(--input-border);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.header-cell.friday {
+    color: var(--primary-color);
+    background: linear-gradient(to bottom, #f0f0ff, #e8e8ff);
+}
+
+.time-cell {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    color: #64748b;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid #f1f5f9;
+    font-weight: 500;
+}
+
+.day-cells {
+    position: relative;
+    min-height: 600px;
+}
+
+.schedule-cell {
+    height: 40px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.2s;
+}
+
+.schedule-cell:hover {
+    background-color: #f8fafc;
+}
+
+.schedule-cell.has-shift {
+    background-color: transparent;
+}
+
+/* Shift Card - New stacked design with color variations */
+.shift-card {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border-left: 4px solid;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.shift-card:hover {
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 20;
+}
+
+/* Color variations for different shift cards */
+.shift-card:nth-child(odd) {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-left-color: #0284c7;
+}
+
+.shift-card:nth-child(even) {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border-left-color: #16a34a;
+}
+
+.shift-card:nth-child(3n) {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left-color: #d97706;
+}
+
+.shift-card:nth-child(4n) {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+    border-left-color: #7c3aed;
+}
+
+.shift-card:nth-child(5n) {
+    background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+    border-left-color: #db2777;
+}
+
+.shift-time {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 0.8rem;
+    letter-spacing: -0.3px;
+}
+
+.shift-location {
+    color: #475569;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.shift-employee {
+    color: #64748b;
+    font-size: 0.7rem;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Employee filter section */
+.employee-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: linear-gradient(to right, #f8fafc, #f1f5f9);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.employee-filter label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.employee-filter select {
+    padding: 8px 32px 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    background-color: white;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.employee-filter select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(93, 95, 219, 0.1);
+}
+
+.clear-filter-btn {
+    padding: 6px 12px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #64748b;
+    transition: all 0.2s;
+}
+
+.clear-filter-btn:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Employee count badge */
+.schedule-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+/* Employee List Styles */
+.list-container {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.list-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--input-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.list-container .table-container {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.shift-cell {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.assign-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.assign-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.action-icon {
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.action-icon.edit:hover {
+    color: var(--primary-color);
+    background-color: rgba(93, 95, 219, 0.1);
+}
+
+.action-icon.delete:hover {
+    color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Status badges */
+.status-badge.scheduled,
+.status-badge.active {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.status-badge.unassigned,
+.status-badge.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+/* No schedules placeholder */
+.no-schedules {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* Row hover effect in list view */
+.data-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.data-table tbody tr.selected {
+    background-color: #eff6ff;
+}

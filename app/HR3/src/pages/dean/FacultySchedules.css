@@ -1,0 +1,20 @@
+.faculty-table .faculty-name {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.faculty-table .subject-cell {
+    color: var(--primary-color);
+}
+
+.faculty-table .days-cell {
+    color: var(--primary-color);
+}
+
+.faculty-table .time-cell {
+    color: var(--primary-color);
+}
+
+.faculty-table .room-cell {
+    color: var(--primary-color);
+}

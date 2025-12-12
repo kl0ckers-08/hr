@@ -1,0 +1,17 @@
+.attendance-overview-table .faculty-name {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.attendance-overview-table .late-count {
+    color: var(--primary-color);
+}
+
+.attendance-overview-table .absent-count {
+    color: #f97316;
+}
+
+.attendance-overview-table .rate-cell {
+    color: var(--primary-color);
+    font-weight: 500;
+}

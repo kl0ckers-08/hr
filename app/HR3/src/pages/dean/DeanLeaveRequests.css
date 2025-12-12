@@ -1,0 +1,51 @@
+.leave-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .leave-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.leave-stat-card {
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    border: 1px solid var(--input-border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leave-stat-card .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.leave-stat-card .stat-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.leave-table .faculty-name {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.status-text {
+    font-weight: 500;
+}
+
+.status-text.pending {
+    color: #f97316;
+}
+
+.status-text.approved {
+    color: #22c55e;
+}
+
+.status-text.rejected {
+    color: #ef4444;
+}
